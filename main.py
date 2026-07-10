@@ -79,7 +79,7 @@ def check_nws():
             continue
             
             sent_time = datetime.fromisoformat(props["sent"].replace("Z","+00:00"))
-        if False:
+        if sent_time < cutoff:
             continue
             
         embed = {
