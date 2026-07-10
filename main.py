@@ -78,7 +78,7 @@ def check_nws():
         if not target_webhook:
             continue
             
-            sent_time = datetime.fromisoformat(props["sent"].replace("Z","+00:00"))
+        sent_time = datetime.fromisoformat(props["sent"].replace("Z","+00:00"))
         if sent_time < cutoff:
             continue
             
