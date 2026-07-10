@@ -18,5 +18,12 @@ jobs:
 
       - name: Run Weather Script
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python3 main.py
+          OUTLOOK_WEBHOOK: ${{ secrets.OUTLOOK_WEBHOOK }}
+          MCD_WEBHOOK: ${{ secrets.MCD_WEBHOOK }}
+          SVR_WEBHOOK: ${{ secrets.SVR_WEBHOOK }}
+          TORNADO_WEBHOOK: ${{ secrets.TORNADO_WEBHOOK }}
+          TROPICAL_WEBHOOK: ${{ secrets.TROPICAL_WEBHOOK }}
+          FLOOD_WEBHOOK: ${{ secrets.FLOOD_WEBHOOK }}
+          HURRICANE_WEBHOOK: ${{ secrets.HURRICANE_WEBHOOK }}
+          WINTER_WEBHOOK: ${{ secrets.WINTER_WEBHOOK }}
+        run: python main.py
