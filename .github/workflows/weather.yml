@@ -2,26 +2,21 @@ name: Weather Alerts Poller
 
 on:
   schedule:
-    # Runs every 5 minutes (GitHub cron)
+    # Runs every 5 minutes
     - cron: "*/5 * * * *"
-  workflow_dispatch: # Allows you to manually trigger it to test
+  workflow_dispatch: # Allows you to manually trigger it
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Updated to v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5 # Updated to v5
-        with:
-          python-version: '3.11'
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python3 -m pip install -r requirements.txt
 
       - name: Run Weather Script
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: python main.py
+        run: python3 main.py
